@@ -1,0 +1,37 @@
+$breakpoints: (
+  "sp": "screen and (max-width: 481px)",
+  "tab": "screen and (min-width: 482px)",
+  "tabL": "screen and (min-width: 768px)",
+  "pc": "screen and (min-width: 992px)"
+);
+
+$padding_wrap: 1rem;
+$tabL_padding_wrap: 1.5rem;
+$pc_padding_wrap: 2.3rem;
+
+$pc_margin_wrap: 3rem;
+
+$mainFontFamily: Helvetica, 游ゴシック, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+$accentFontFamily: "Concert One", cursive;
+
+$font-weight-base: 400;
+$font-weight-bold: 700;
+
+$color-theme: #1DB4D3;
+$color-section: #1BADCB;  /* 青 */
+$color-text: #666;  /* 黒　薄め */
+$color-text-2: #444;  /* 黒 */
+$color-text-3: #333;  /* 黒　濃いめ */
+$cocor-footer-text: #cacaca; /* 鼠色 */
+$color-footer-link: #f7f7f7; /* 白 */
+$color-white: #f7f7f7;
+$color-accent: #eeee22;  /* 黄色 */
+$color-accent-2: #E87D7D;  /* ピンク */
+$color-border: #e5e5e5;
+$color-border-2: #ccc; /* 濃いめ */
+$color-boxShadow: #ddd;
+
+$border-bold: 3px solid #e5e5e5;
+$rounded-corners: 3px;
+
+$animation-second: .3s;

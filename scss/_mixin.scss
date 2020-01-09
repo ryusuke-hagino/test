@@ -1,0 +1,187 @@
+// base
+
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin txt-15-16 {
+  font-size: 15px;
+  line-height: 22px;
+
+  @include mq('tab') {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+// parts
+
+@mixin modal-window($scroll) {
+  display: none;
+  position: $scroll;
+  z-index: 2;
+  width: 87%;
+  max-width: 700px;
+}
+
+@mixin close-btn {
+  padding: .8rem;
+  margin: 1.2rem 0;
+  font-family: $accentFontFamily;
+  font-size: 17px;
+  border-radius: $rounded-corners;
+
+  &:focus {
+    background-color: lighten($color-theme, 30%);
+  }
+
+  @include mq('tab') {
+    font-size: 20px;
+  }
+
+  &::before {
+    content: "\f00d";
+    position: relative;
+    top: 3px;
+    padding-right: .3rem;
+    font-family: "Font Awesome 5 Free";
+    font-size: 24px;
+    font-weight: 900;
+
+    @include mq('tab') {
+      font-size: 28px;
+    }
+  }
+}
+
+@mixin section-ttl {
+  padding: .7rem;
+  font-weight: $font-weight-bold;
+  color: #fff;
+  background-color: $color-section;
+  border-radius: $rounded-corners;
+}
+
+@mixin list {
+  li {
+    position: relative;
+
+    a {
+      display: block;
+      padding: 1rem 1rem 1rem 0;
+      @include hover-lighten;
+    }
+
+    &::before {
+      content: "\f054";
+      position: absolute;
+      top: 50%;
+      right: .2rem;
+      transform: translateY(-50%);
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: $color-theme;
+    }
+
+    &:hover {
+      &::before {
+        right: 0;
+      }
+    }
+  }
+
+  li:not(:last-child) {
+    border-bottom: 1px dotted #e5e5e5;
+  }
+}
+
+@mixin tags {
+  display: inline-block;
+  padding: .2rem;
+  margin: 0 .1rem .1rem 0;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fff;
+  background-color: #909090;
+}
+
+@mixin recent-post {
+  @include list;
+
+  .recent-post-item-flex {
+   display: flex;
+   align-items: flex-start;
+
+   img {
+     width: 30%;
+     max-width: 100px;
+     margin-right: .5rem;
+   }
+
+   p {
+     flex: 1;
+     font-size: 15px;
+     line-height: 22px;
+
+     span {
+       padding: 0 .5rem;
+       font-family: $accentFontFamily;
+       font-size: 13px;
+       color: #b3b3b3;
+      }
+    }
+  }
+}
+
+@mixin article-label {
+  position: relative;
+
+  .article-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    padding: .1rem 0;
+    font-size: 10px;
+    font-weight: $font-weight-bold;
+    line-height: 15px;
+    text-align: center;
+    color: $color-text-2;
+    background-color: $color-accent;
+    opacity: .8;
+  }
+}
+
+@mixin btn-style {
+  color: $color-section;
+
+  a {
+    border: 1px solid $color-section;
+    transition: $animation-second;
+
+    &:hover {
+      color: #fff;
+      background-color: $color-section;
+    }
+  }
+}
+
+@mixin btn-style-2 {
+  color: #fff;
+
+  a {
+    display: block;
+    background-color: #F7CF2E;
+    border-radius: $rounded-corners;
+    box-shadow: 0 4px 0 #ECB254;
+    transition: $animation-second;
+
+    &:hover {
+      transform: translateY(4px);
+      background-color: #ECB254;
+      box-shadow: none;
+    }
+  }
+}

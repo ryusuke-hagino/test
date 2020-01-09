@@ -1,0 +1,84 @@
+@mixin hover-black {
+    transition: $animation-second;
+
+  &:hover {
+    color: #2b2e38;
+  }
+}
+
+@mixin hover-white {
+  transition: $animation-second;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+@mixin hover-pink {
+  transition: $animation-second;
+
+  &:hover {
+    color: $color-accent-2;
+  }
+}
+
+@mixin hover-lighten {
+  transition: $animation-second;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+@mixin border-bottom {
+  > a {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: .5rem;
+      width: 0;
+      border-bottom: 1px solid #e5e5e5;
+      opacity: .7;
+      transition: $animation-second;
+    }
+
+    &::before {
+      left: 50%;
+    }
+
+    &::after {
+      right: 50%;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      width: 50%;
+    }
+  }
+}
+
+@mixin background-open {
+    position: relative;
+    transition: $animation-second;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      background: $color-theme;
+      transform-origin: center center;
+      transform: scale(0, 1);
+      transition: transform .3s;
+      opacity: 0.05;
+  }
+
+    &:hover::before {
+      transform: scale(1, 1);
+    }
+}
